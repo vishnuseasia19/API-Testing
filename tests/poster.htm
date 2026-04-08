@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hairstyling Masterclass Poster</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Poster Container */
+.poster {
+  width: 1080px; /* Instagram post size */
+  height: 1350px;
+  background: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: #1c1917;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 5px;
+  font-style: italic;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  flex: 1;
+}
+
+/* Left Image */
+.left {
+  width: 50%;
+  background: #e7e5e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left img {
+  width: 80%;
+  border-radius: 50%;
+}
+
+/* Right Content */
+.right {
+  width: 50%;
+  padding: 40px;
+}
+
+.tag {
+  background: #fef3c7;
+  padding: 6px 12px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+}
+
+.title span {
+  color: #d97706;
+  font-style: italic;
+}
+
+.details {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  background: #fafaf9;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone {
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+}
+
+.btn {
+  background: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive for mobile preview */
+@media (max-width: 768px) {
+  .poster {
+    width: 100%;
+    height: auto;
+  }
+  .main {
+    flex-direction: column;
+  }
+  .left, .right {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="poster" id="poster">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Hairstylesbyvandana</h1>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Left -->
+    <div class="left">
+      <img src="https://via.placeholder.com/300" alt="Vandana Photo">
+    </div>
+
+    <!-- Right -->
+    <div class="right">
+      <div class="tag">Premium Training</div>
+
+      <div class="title">
+        10 Days <br>
+        <span>Masterclass</span>
+      </div>
+
+      <div class="details">
+        📅 11th May — 20th May <br>
+        ⏰ 11:00 AM to 04:00 PM <br>
+        📍 Jalandhar <br><br>
+
+        ✔ Hands-on Practice <br>
+        ✔ Certificate Provided
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>
+      <div>Book your seat now</div>
+      <div class="phone">8283871018</div>
+    </div>
+
+    <button class="btn" onclick="downloadPoster()">Download Poster</button>
+  </div>
+
+</div>
+
+<!-- JS to Download Poster -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+function downloadPoster() {
+  html2canvas(document.getElementById("poster")).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "poster.png";
+    link.href = canvas.toDataURL();
+    link.click();
+  });
+}
+</script>
+
+</body>
+</html>
